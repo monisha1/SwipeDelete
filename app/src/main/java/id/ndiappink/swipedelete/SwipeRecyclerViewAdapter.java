@@ -1,11 +1,13 @@
 package id.ndiappink.swipedelete;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,7 +113,7 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
             }
         });
 
-        viewHolder.Delete.setOnClickListener(new View.OnClickListener() {
+       /* viewHolder.Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mItemManger.removeShownLayouts(viewHolder.swipeLayout);
@@ -122,7 +124,7 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
                 Toast.makeText(v.getContext(), "Deleted " + viewHolder.Name.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
+*/
         mItemManger.bindView(viewHolder.itemView, position);
     }
 
@@ -141,8 +143,8 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
         public TextView Name;
         public TextView EmailId;
         public TextView Delete;
-        public TextView Edit;
-        public TextView Share;
+        public ImageView Edit;
+        public ImageView Share;
         public ImageButton btnLocation;
         public SimpleViewHolder(View itemView) {
             super(itemView);
@@ -150,9 +152,9 @@ public class SwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<SwipeRecycler
             swipeLayout = (SwipeLayout) itemView.findViewById(R.id.swipe);
             Name = (TextView) itemView.findViewById(R.id.Name);
             EmailId = (TextView) itemView.findViewById(R.id.EmailId);
-            Delete = (TextView) itemView.findViewById(R.id.Delete);
-            Edit = (TextView) itemView.findViewById(R.id.Edit);
-            Share = (TextView) itemView.findViewById(R.id.Share);
+        //    Delete = (TextView) itemView.findViewById(R.id.Delete);
+            Edit =  itemView.findViewById(R.id.Edit);
+            Share =  itemView.findViewById(R.id.Share);
             btnLocation = (ImageButton) itemView.findViewById(R.id.btnLocation);
         }
     }
